@@ -25,19 +25,9 @@ readline.question(`Enter your github token: `, token => {
 
     const setUserAuth = `cd apps-playground && npm config set //npm.pkg.github.com/:_authToken ${token}`
 
-    console.log(`Creating Directories`)
-    try {
-        const makeDir = runCommand(createDir)
-    } catch (error) {
-        console.log(error);
-    }
-
     console.log(`Configuring npm...`)
-    const registry = runCommand(setRegistry)
-    // if (!registry) process.exit(-1)
 
     const auth = runCommand(setUserAuth)
-    // if (!auth) process.exit(-1)
 
     console.log(`Successful`)
 });
